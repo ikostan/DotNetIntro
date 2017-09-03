@@ -30,10 +30,25 @@ namespace DotNetLists
             configs.Add("title", "My website");
             configs.Add("name", "My name is John");
 
+            Console.WriteLine("\nPrint key value pairs:");
             foreach (var config in configs)
                 {
 
                 Console.WriteLine(config);
+                }
+
+            Console.WriteLine("\nPrint keys:");
+            foreach (var config in configs)
+                {
+
+                Console.WriteLine(config.Key);
+                }
+
+            Console.WriteLine("\nPrint values:");
+            foreach (var config in configs)
+                {
+
+                Console.WriteLine(config.Value);
                 }
 
             //Show item by key
