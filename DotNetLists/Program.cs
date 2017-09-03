@@ -99,9 +99,14 @@ namespace DotNetLists
                 {
 
                 Console.WriteLine(customer);
-                }          
+                }
+
+            //Access by key
+            Console.WriteLine(list[1].ToString());
 
             }
+
+
 
 
         }
