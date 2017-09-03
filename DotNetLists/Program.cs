@@ -1,21 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DotNetLists
     {
 
     class Program
         {
+
+        //Main method
         static void Main(string[] args)
             {
 
             listSample();
             dictionarySample();
             arrayListSample();
+
+            hashTableSample();
+            threadSafeSample();
 
             Console.WriteLine("\nPlease press any key...");
             Console.ReadLine(); //Wait for input before closing the console
@@ -105,14 +108,19 @@ namespace DotNetLists
 
             }
 
+
         private static void hashTableSample() {
 
             Console.WriteLine("\nHashTable for key value pairs (deprecated):");
 
             }
 
+
         private static void threadSafeSample()
             {
+
+            Console.WriteLine("\n:");
+
 
             }
 
