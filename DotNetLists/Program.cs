@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DotNetLists
     {
+
     class Program
         {
         static void Main(string[] args)
@@ -24,7 +25,7 @@ namespace DotNetLists
 
         private static void dictionarySample() {
 
-            Console.WriteLine("Dictionaries for key value pairs:");
+            Console.WriteLine("\nDictionaries for key value pairs:");
 
             Dictionary<String, String> configs = new Dictionary<String, String>();
 
@@ -56,14 +57,12 @@ namespace DotNetLists
             //Show item by key
             Console.WriteLine(configs["name"]);
 
-
             }
-
 
 
         private static void listSample() {
 
-            Console.WriteLine("Lists for indexed values:");
+            Console.WriteLine("\nLists for indexed values:");
 
             //Lists
             List<String> customers = new List<String>();
@@ -86,9 +85,9 @@ namespace DotNetLists
         private static void arrayListSample()
             {
 
-            Console.WriteLine("ArrayLists for dynamic-sized:");
+            Console.WriteLine("\nArrayLists for dynamic-sized (deprecated):");
 
-            //Lists
+            //ArrayLists
             ArrayList list = new ArrayList();
 
             list.Add("Kim");
@@ -106,8 +105,19 @@ namespace DotNetLists
 
             }
 
+        private static void hashTableSample() {
 
+            Console.WriteLine("\nHashTable for key value pairs (deprecated):");
+
+            }
+
+        private static void threadSafeSample()
+            {
+
+            }
 
 
         }
+
+    //class Program
     }
