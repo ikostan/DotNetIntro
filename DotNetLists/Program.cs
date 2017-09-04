@@ -144,6 +144,10 @@ namespace DotNetLists
 
             Console.WriteLine("\nHashTable for key value pairs (deprecated):");
 
+            Hashtable table = new Hashtable();
+            table.Add("title", "Some Title");
+            string s = (string)table["title"];
+            Console.Write(s);
             }
 
         private static void threadSafeSample()
