@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Forms;
 
 
@@ -14,6 +16,9 @@ namespace DotNetLists
         private readonly static string TITLE = "C# & .NET: Programming";
         private static string userInput = "";
 
+        private static ConcurrentDictionary<int, int> items;
+        private static Thread thread1, thread2;
+
         //Main method
         static void Main(string[] args)
             {
@@ -23,9 +28,30 @@ namespace DotNetLists
             Console.WriteLine("'" + TAG + "' class called");
 
             mainProgram();
+            startMultiThreads();
 
             MessageBox.Show("All done!");
 
+            }
+
+        private static void startMultiThreads() {
+
+            Console.WriteLine("\nStart Multi Threads:\n");
+
+            items = new ConcurrentDictionary<int, int>();
+            thread1 = new Thread(new ThreadStart(addItem));
+            thread2 = new Thread(new ThreadStart(addItem));
+
+            thread1.Start();
+            thread2.Start();
+
+            }
+
+        private static void addItem() {
+
+            Console.WriteLine("'addItem' method called");
+            items.TryAdd(1, 2);
+            Console.WriteLine("Total items: " + items.Count);
             }
 
         private static void getUserInput() {
@@ -53,10 +79,7 @@ namespace DotNetLists
                 listSample();
                 dictionarySample();
                 arrayListSample();
-
-                //TODO
                 hashTableSample();
-                threadSafeSample();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
@@ -148,13 +171,6 @@ namespace DotNetLists
             table.Add("title", "Some Title");
             string s = (string)table["title"];
             Console.Write(s);
-            }
-
-        private static void threadSafeSample()
-            {
-
-            Console.WriteLine("\n:");
-            
             }
 
         private static void exitApp() {
