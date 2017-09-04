@@ -19,6 +19,7 @@ namespace DotNetLists
         private static ConcurrentDictionary<int, int> items;
         private static Thread thread1, thread2;
 
+        private static Stack<String> myStack;
 
         //Main method
         static void Main(string[] args)
@@ -35,13 +36,28 @@ namespace DotNetLists
 
             }
 
+        private static void setStack() {
+
+            Console.WriteLine("\nStack:\n");
+            myStack = new Stack<String>();
+            myStack.Push("One");
+            myStack.Push("Two");
+            myStack.Push("Three");
+
+            foreach (var item in myStack) {
+                Console.WriteLine((string)item);
+                }
+
+            Console.WriteLine((string)myStack.Pop()); //Show and remove an item
+            Console.WriteLine((string)myStack.Peek()); //Show only
+            }
+
         private static void setTuple()
             {
             Console.WriteLine("\nTuple:\n");
             var myTuple = Tuple.Create(1, "hello", true);
             Console.WriteLine(myTuple.Item2);
             }
-
 
         private static void startMultiThreads() {
 
@@ -90,6 +106,7 @@ namespace DotNetLists
                 arrayListSample();
                 hashTableSample();
                 setTuple();
+                setStack();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
