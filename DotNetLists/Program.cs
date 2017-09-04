@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -27,6 +28,7 @@ namespace DotNetLists
         static void Main(string[] args)
             {
 
+            Console.Beep();
             Console.Title = TITLE;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("'" + TAG + "' class called");
@@ -36,7 +38,57 @@ namespace DotNetLists
             ShowEnvironmentDetails();
 
             MessageBox.Show("All done!");
+            Console.Beep();
+            }
 
+        static void BasicStringFunctionality()
+            {
+            Console.WriteLine("\n=> Basic String functionality:\n");
+            string firstName = "Freddy";
+            Console.WriteLine("Value of firstName: {0}", firstName);
+            Console.WriteLine("firstName has {0} characters.", firstName.Length);
+            Console.WriteLine("firstName in uppercase: {0}", firstName.ToUpper());
+            Console.WriteLine("firstName in lowercase: {0}", firstName.ToLower());
+            Console.WriteLine("firstName contains the letter y?: {0}",
+                firstName.Contains("y"));
+            Console.WriteLine("firstName after replace: {0}", firstName.Replace("dy", ""));
+            }
+
+        static void UseDatesAndTimes()
+            {
+            Console.WriteLine("\n=> Dates and Times:\n");
+            // This constructor takes (year, month, day).
+            DateTime dt = new DateTime(2015, 10, 17);
+            // What day of the month is this?
+            Console.WriteLine("The day of {0} is {1}", dt.Date, dt.DayOfWeek);
+            // Month is now December.
+            dt = dt.AddMonths(2);
+            Console.WriteLine("Daylight savings: {0}", dt.IsDaylightSavingTime());
+            // This constructor takes (hours, minutes, seconds).
+            TimeSpan ts = new TimeSpan(4, 30, 0);
+            Console.WriteLine(ts);
+            // Subtract 15 minutes from the current TimeSpan and
+            // print the result.
+            Console.WriteLine(ts.Subtract(new TimeSpan(0, 15, 0)));
+
+
+            // The example displays the following output:
+            //       en-US: 6/19/2015 10:03:06 AM
+            //       en-GB: 19/06/2015 10:03:06
+            //       fr-FR: 19/06/2015 10:03:06
+            //       de-DE: 19.06.2015 10:03:06
+            //       ru-RU: 19.06.2015 10:03:06
+
+            DateTime localDate = DateTime.Now;
+            String[] cultureNames = { "en-US", "en-GB", "fr-FR", "de-DE", "ru-RU" };
+
+            foreach (var cultureName in cultureNames)
+                {
+                var culture = new CultureInfo(cultureName);
+                Console.WriteLine("{0}: {1}", cultureName,
+                                  localDate.ToString(culture));
+
+                }
             }
 
         static void ParseFromStrings()
@@ -244,6 +296,9 @@ namespace DotNetLists
                 FormatNumericalData();
                 ObjectFunctionality();
                 DataTypeFunctionality();
+                ParseFromStrings();
+                UseDatesAndTimes();
+                BasicStringFunctionality();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
