@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace DotNetLists
@@ -9,7 +10,7 @@ namespace DotNetLists
     class Program
         {
 
-        private readonly static string TITLE = "FromC# & .NET: Programming";
+        private readonly static string TITLE = "C# & .NET: Programming";
 
         //Main method
         static void Main(string[] args)
@@ -25,9 +26,11 @@ namespace DotNetLists
             hashTableSample();
             threadSafeSample();
 
-            Console.WriteLine("\nPlease press any key...");
+            Console.WriteLine("\nPress ENTER key to continue...");
             Console.ReadLine(); // Wait for Enter key to be pressed.
 
+
+            MessageBox.Show("All done!");
             }
 
 
@@ -44,27 +47,23 @@ namespace DotNetLists
             Console.WriteLine("\nPrint key value pairs:");
             foreach (var config in configs)
                 {
-
                 Console.WriteLine(config);
                 }
 
             Console.WriteLine("\nPrint keys:");
             foreach (var config in configs)
                 {
-
                 Console.WriteLine(config.Key);
                 }
 
             Console.WriteLine("\nPrint values:");
             foreach (var config in configs)
                 {
-
                 Console.WriteLine(config.Value);
                 }
 
             //Show item by key
             Console.WriteLine(configs["name"]);
-
             }
 
 
@@ -80,13 +79,11 @@ namespace DotNetLists
 
             foreach (var customer in customers)
                 {
-
                     Console.WriteLine(customer);
                 }
 
             //Show specific customer
             Console.WriteLine(customers[1]);
-
             }
 
 
@@ -104,13 +101,11 @@ namespace DotNetLists
 
             foreach (var customer in list)
                 {
-
                 Console.WriteLine(customer);
                 }
 
             //Access by key
             Console.WriteLine(list[1].ToString());
-
             }
 
 
@@ -123,7 +118,6 @@ namespace DotNetLists
 
         private static void threadSafeSample()
             {
-
             Console.WriteLine("\n:");
 
 
