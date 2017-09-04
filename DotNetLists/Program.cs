@@ -9,9 +9,14 @@ namespace DotNetLists
     class Program
         {
 
+        private readonly static string TITLE = "FromC# & .NET: Programming";
+
         //Main method
         static void Main(string[] args)
             {
+
+            Console.Title = TITLE;
+            Console.ForegroundColor = ConsoleColor.Green;
 
             listSample();
             dictionarySample();
@@ -21,7 +26,7 @@ namespace DotNetLists
             threadSafeSample();
 
             Console.WriteLine("\nPlease press any key...");
-            Console.ReadLine(); //Wait for input before closing the console
+            Console.ReadLine(); // Wait for Enter key to be pressed.
 
             }
 
