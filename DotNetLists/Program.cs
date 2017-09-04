@@ -39,6 +39,37 @@ namespace DotNetLists
 
             }
 
+        static void ParseFromStrings()
+            {
+            Console.WriteLine("\n=> Data type parsing:\n");
+            bool b = bool.Parse("True");
+            Console.WriteLine("Value of b: {0}", b);
+            double d = double.Parse("99.884");
+            Console.WriteLine("Value of d: {0}", d);
+            int i = int.Parse("8");
+            Console.WriteLine("Value of i: {0}", i);
+            char c = Char.Parse("w");
+            Console.WriteLine("Value of c: {0}", c);
+            }
+
+        static void CharFunctionality()
+            {
+            Console.WriteLine("\n=> char type Functionality:\n");
+
+            char myChar = 'a';
+            Console.WriteLine("char.IsDigit('a'): {0}", char.IsDigit(myChar));
+            Console.WriteLine("char.IsLetter('a'): {0}", char.IsLetter(myChar));
+
+            Console.WriteLine("char.IsWhiteSpace('Hello There', 5): {0}",
+            char.IsWhiteSpace("Hello There", 5));
+
+            Console.WriteLine("char.IsWhiteSpace('Hello There', 6): {0}",
+            char.IsWhiteSpace("Hello There", 6));
+
+            Console.WriteLine("char.IsPunctuation('?'): {0}",
+            char.IsPunctuation('?'));
+            }
+
         static void DataTypeFunctionality()
             {
             Console.WriteLine("\n=> Data type Functionality:\n");
