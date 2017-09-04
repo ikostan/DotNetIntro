@@ -10,6 +10,7 @@ namespace DotNetLists
     class Program
         {
 
+        private readonly static string TAG = typeof(Program).Name;
         private readonly static string TITLE = "C# & .NET: Programming";
 
         //Main method
@@ -18,6 +19,8 @@ namespace DotNetLists
 
             Console.Title = TITLE;
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("'" + TAG + "' class called");
+
 
             listSample();
             dictionarySample();
@@ -118,13 +121,13 @@ namespace DotNetLists
 
         private static void threadSafeSample()
             {
+
             Console.WriteLine("\n:");
-
-
+            
             }
 
 
         }
 
-    //class Program
+    //Class Program
     }
