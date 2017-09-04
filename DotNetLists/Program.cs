@@ -55,8 +55,10 @@ namespace DotNetLists
                 firstName.Contains("y"));
             Console.WriteLine("firstName after replace: {0}", firstName.Replace("dy", ""));
 
+
             // The following string is printed verbatim,
             // thus all escape characters are displayed.
+            Console.WriteLine("\nVerbatim Strings:");
             Console.WriteLine(@"C:\MyApp\bin\Debug");
 
             // White space is preserved with verbatim strings.
@@ -65,6 +67,8 @@ namespace DotNetLists
                     very
                         long string";
             Console.WriteLine(myLongString);
+
+            Console.WriteLine(@"Cerebus said ""Darrr! Pret-ty sun-sets""");
             }
 
         static void UseDatesAndTimes()
