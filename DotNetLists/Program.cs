@@ -19,6 +19,7 @@ namespace DotNetLists
         private static ConcurrentDictionary<int, int> items;
         private static Thread thread1, thread2;
 
+
         //Main method
         static void Main(string[] args)
             {
@@ -33,6 +34,14 @@ namespace DotNetLists
             MessageBox.Show("All done!");
 
             }
+
+        private static void setTuple()
+            {
+            Console.WriteLine("\nTuple:\n");
+            var myTuple = Tuple.Create(1, "hello", true);
+            Console.WriteLine(myTuple.Item2);
+            }
+
 
         private static void startMultiThreads() {
 
@@ -80,6 +89,7 @@ namespace DotNetLists
                 dictionarySample();
                 arrayListSample();
                 hashTableSample();
+                setTuple();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
