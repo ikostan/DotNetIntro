@@ -39,9 +39,23 @@ namespace DotNetLists
 
             }
 
+        static void DataTypeFunctionality()
+            {
+            Console.WriteLine("\n=> Data type Functionality:\n");
+            Console.WriteLine("Max of int: {0}", int.MaxValue);
+            Console.WriteLine("Min of int: {0}", int.MinValue);
+            Console.WriteLine("Max of double: {0}", double.MaxValue);
+            Console.WriteLine("Min of double: {0}", double.MinValue);
+            Console.WriteLine("double.Epsilon: {0}", double.Epsilon);
+            Console.WriteLine("double.PositiveInfinity: {0}",
+                double.PositiveInfinity);
+            Console.WriteLine("double.NegativeInfinity: {0}",
+                double.NegativeInfinity);
+            }
+
         static void ObjectFunctionality()
             {
-            Console.WriteLine("=> System.Object Functionality:");
+            Console.WriteLine("\n=> System.Object Functionality:\n");
             // A C# int is really a shorthand for System.Int32,
             // which inherits the following members from System.Object.
             Console.WriteLine("12.GetHashCode() = {0}", 12.GetHashCode());
@@ -198,6 +212,7 @@ namespace DotNetLists
                 setHashSet();
                 FormatNumericalData();
                 ObjectFunctionality();
+                DataTypeFunctionality();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
