@@ -20,6 +20,8 @@ namespace DotNetLists
         private static Thread thread1, thread2;
 
         private static Stack<String> myStack;
+        private static Queue<String> myQueue;
+        private static HashSet<string> myHashSet;
 
         //Main method
         static void Main(string[] args)
@@ -50,6 +52,46 @@ namespace DotNetLists
 
             Console.WriteLine((string)myStack.Pop()); //Show and remove an item
             Console.WriteLine((string)myStack.Peek()); //Show only
+            }
+
+        private static void setQueue()
+            {
+
+            Console.WriteLine("\nQueue:\n");
+            myQueue = new Queue<String>();
+            myQueue.Enqueue("One");
+            myQueue.Enqueue("Two");
+            myQueue.Enqueue("Three");
+
+            foreach (var item in myQueue)
+                {
+                Console.WriteLine((string)item);
+                }
+
+            Console.WriteLine((string)myQueue.Dequeue()); //Show and remove an item
+            Console.WriteLine((string)myQueue.Peek()); //Show only
+            }
+
+        private static void setHashSet()
+            {
+
+            Console.WriteLine("\nHashSet:\n");
+
+            string[] items = new string[] { "One", "Four", "Five"};
+            myHashSet = new HashSet<String>();
+            myHashSet.Add("One");
+            myHashSet.Add("Two");
+            myHashSet.Add("Three");
+            myHashSet.Add("Three");
+            myHashSet.Add("Three");
+
+            foreach (var item in myHashSet)
+                {
+                Console.WriteLine((string)item);
+                }
+
+            Console.WriteLine("Total items in the HashSet: " + myHashSet.Count);
+            Console.WriteLine("Overlapping items: " + myHashSet.Overlaps(items));
             }
 
         private static void setTuple()
@@ -107,6 +149,8 @@ namespace DotNetLists
                 hashTableSample();
                 setTuple();
                 setStack();
+                setQueue();
+                setHashSet();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
