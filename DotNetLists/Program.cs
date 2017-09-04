@@ -12,7 +12,7 @@ namespace DotNetLists
 
         private readonly static string TAG = typeof(Program).Name;
         private readonly static string TITLE = "C# & .NET: Programming";
-        private static string userInput = "0";
+        private static string userInput = "";
 
         //Main method
         static void Main(string[] args)
@@ -43,7 +43,6 @@ namespace DotNetLists
             while (!(userInput == "1" || userInput == "2"));
             }
 
-
         private static void mainProgram() {
 
             getUserInput();
@@ -55,7 +54,7 @@ namespace DotNetLists
                 dictionarySample();
                 arrayListSample();
 
-
+                //TODO
                 hashTableSample();
                 threadSafeSample();
 
@@ -68,7 +67,6 @@ namespace DotNetLists
                 exitApp();
                 }
             }
-
 
         private static void dictionarySample() {
 
@@ -167,10 +165,10 @@ namespace DotNetLists
                 // Console app
                 System.Environment.Exit(1);
                 }
-
             }
 
+        //Class Program
         }
 
-    //Class Program
+    //DotNetLists
     }
