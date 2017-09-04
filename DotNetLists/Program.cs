@@ -37,8 +37,10 @@ namespace DotNetLists
             startMultiThreads();
             ShowEnvironmentDetails();
 
-            MessageBox.Show("All done!");
             Console.Beep();
+            MessageBox.Show("All done!");
+            // Adds a total of 4 blank lines (then beep again!).
+            Console.WriteLine("All finished.\n\n\n\a ");
             }
 
         static void BasicStringFunctionality()
@@ -52,6 +54,17 @@ namespace DotNetLists
             Console.WriteLine("firstName contains the letter y?: {0}",
                 firstName.Contains("y"));
             Console.WriteLine("firstName after replace: {0}", firstName.Replace("dy", ""));
+
+            // The following string is printed verbatim,
+            // thus all escape characters are displayed.
+            Console.WriteLine(@"C:\MyApp\bin\Debug");
+
+            // White space is preserved with verbatim strings.
+            string myLongString = @"This is a very
+                very
+                    very
+                        long string";
+            Console.WriteLine(myLongString);
             }
 
         static void UseDatesAndTimes()
