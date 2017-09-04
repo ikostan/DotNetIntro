@@ -43,13 +43,18 @@ namespace DotNetLists
             {
             // Print out the drives on this machine,
             // and other interesting details.
-            foreach (string drive in Environment.GetLogicalDrives())
+            foreach (string drive in Environment.GetLogicalDrives()) {
                 Console.WriteLine("Drive: {0}", drive);
+                }
+                
             Console.WriteLine("OS: {0}", Environment.OSVersion);
-            Console.WriteLine("Number of processors: {0}",
-            Environment.ProcessorCount);
-            Console.WriteLine(".NET Version: {0}",
-            Environment.Version);
+            Console.WriteLine("Number of processors: {0}", Environment.ProcessorCount);
+            Console.WriteLine(".NET Version: {0}", Environment.Version);
+            Console.WriteLine("System Directory: {0}", Environment.SystemDirectory);
+            Console.WriteLine("User Domain Name: {0}", Environment.UserDomainName);
+            Console.WriteLine("Machine Name: {0}", Environment.MachineName);
+            Console.WriteLine("Current Directory: {0}", Environment.CurrentDirectory);
+
             }
 
         private static void setStack() {
