@@ -12,6 +12,7 @@ namespace DotNetLists
 
         private readonly static string TAG = typeof(Program).Name;
         private readonly static string TITLE = "C# & .NET: Programming";
+        private static string userInput = "0";
 
         //Main method
         static void Main(string[] args)
@@ -21,19 +22,51 @@ namespace DotNetLists
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("'" + TAG + "' class called");
 
-
-            listSample();
-            dictionarySample();
-            arrayListSample();
-
-            hashTableSample();
-            threadSafeSample();
-
-            Console.WriteLine("\nPress ENTER key to continue...");
-            Console.ReadLine(); // Wait for Enter key to be pressed.
-
+            mainProgram();
 
             MessageBox.Show("All done!");
+
+            }
+
+        private static void getUserInput() {
+
+            do {
+
+                Console.WriteLine("\nEnter '1' to RUN the application OR '2' to EXIT:\n");
+                userInput = Console.ReadLine();
+
+                if (!(userInput == "1" || userInput == "2")) {
+
+                    Console.WriteLine("ERROR: invalid input!");
+                    }
+                }
+            while (!(userInput == "1" || userInput == "2"));
+            }
+
+
+        private static void mainProgram() {
+
+            getUserInput();
+
+            if (userInput == "1")
+                {
+
+                listSample();
+                dictionarySample();
+                arrayListSample();
+
+
+                hashTableSample();
+                threadSafeSample();
+
+                Console.WriteLine("\nPress ENTER key to continue...");
+                Console.ReadLine(); // Wait for Enter key to be pressed.
+                }
+            else if (userInput == "2")
+                {
+
+                exitApp();
+                }
             }
 
 
@@ -69,7 +102,6 @@ namespace DotNetLists
             Console.WriteLine(configs["name"]);
             }
 
-
         private static void listSample() {
 
             Console.WriteLine("\nLists for indexed values:");
@@ -88,7 +120,6 @@ namespace DotNetLists
             //Show specific customer
             Console.WriteLine(customers[1]);
             }
-
 
         private static void arrayListSample()
             {
@@ -111,13 +142,11 @@ namespace DotNetLists
             Console.WriteLine(list[1].ToString());
             }
 
-
         private static void hashTableSample() {
 
             Console.WriteLine("\nHashTable for key value pairs (deprecated):");
 
             }
-
 
         private static void threadSafeSample()
             {
@@ -126,6 +155,20 @@ namespace DotNetLists
             
             }
 
+        private static void exitApp() {
+
+            if (System.Windows.Forms.Application.MessageLoop)
+                {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+                }
+            else
+                {
+                // Console app
+                System.Environment.Exit(1);
+                }
+
+            }
 
         }
 
