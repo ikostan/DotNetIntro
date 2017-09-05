@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -41,6 +42,23 @@ namespace DotNetLists
             MessageBox.Show("All done!");
             // Adds a total of 4 blank lines (then beep again!).
             Console.WriteLine("All finished.\n\n\n\a ");
+            }
+
+        static void FunWithStringBuilder()
+            {
+            Console.WriteLine("\n=> Using the StringBuilder:\n");
+            StringBuilder sb = new StringBuilder("**** Fantastic Games ****");
+            sb.Append("\n");
+            sb.AppendLine("Half Life");
+            sb.AppendLine("Morrowind");
+            sb.AppendLine("Deus Ex" + "2");
+            sb.AppendLine("System Shock");
+            Console.WriteLine(sb.ToString());
+            sb.Replace("2", " Invisible War");
+            Console.WriteLine(sb.ToString());
+            Console.WriteLine("sb has {0} chars.", sb.Length);
+            sb.Clear();
+            Console.WriteLine("sb has {0} chars.", sb.Length);
             }
 
         static void BasicStringFunctionality()
@@ -316,6 +334,7 @@ namespace DotNetLists
                 ParseFromStrings();
                 UseDatesAndTimes();
                 BasicStringFunctionality();
+                FunWithStringBuilder();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
