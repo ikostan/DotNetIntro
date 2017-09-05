@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -42,6 +43,23 @@ namespace DotNetLists
             MessageBox.Show("All done!");
             // Adds a total of 4 blank lines (then beep again!).
             Console.WriteLine("All finished.\n\n\n\a ");
+            }
+
+        static void LinqQueryOverInts()
+            {
+            Console.Write("\nLinq Query Over Ints:\n");
+            int[] numbers = { 10, 20, 30, 40, 1, 2, 3, 8 };
+            // LINQ query!
+            var subset = from i in numbers where i < 10 select i;
+            Console.Write("Values in subset: ");
+            foreach (var i in subset)
+                {
+                Console.Write("{0} ", i);
+                }
+            Console.WriteLine();
+            // Hmm...what type is subset?
+            Console.WriteLine("subset is a: {0}", subset.GetType().Name);
+            Console.WriteLine("subset is defined in: {0}", subset.GetType().Namespace);
             }
 
         static void FunWithStringBuilder()
@@ -335,6 +353,7 @@ namespace DotNetLists
                 UseDatesAndTimes();
                 BasicStringFunctionality();
                 FunWithStringBuilder();
+                LinqQueryOverInts();
 
                 Console.WriteLine("\nPress ENTER key to continue...");
                 Console.ReadLine(); // Wait for Enter key to be pressed.
